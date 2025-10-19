@@ -1,191 +1,159 @@
-import { Button } from "@/components/ui/button";
-import { PathCard } from "@/components/PathCard";
-import { TestimonialCard } from "@/components/TestimonialCard";
-import { Heart, Users, Sparkles, CalendarDays } from "lucide-react";
-import heroImage from "@/assets/hero-prayer.jpg";
-import therapyImage from "@/assets/therapy-serene.jpg";
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-const Index = () => {
-  const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-  };
+  <title>Essência Curada | Restaura a tua essência com fé e propósito</title>
+  <meta name="description" content="Um espaço de fé, cura interior e reencontro com Deus. Descobre o Desafio de 21 Dias, a Comunidade Essência Curada e as mentorias que fortalecem a tua alma e identidade em Cristo.">
+  <meta name="keywords" content="cura interior, fé, Deus, desafio 21 dias, mentoria cristã, comunidade espiritual, essência feminina, restauração emocional, identidade em Cristo, Essência Curada">
+  <meta name="author" content="Victória | Essência Curada">
 
-  return (
-    <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section 
-        className="relative min-h-screen flex items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-[#B28B4420] via-[#B28B4410] to-black/50 backdrop-brightness-110" />
-        <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto py-12">
-          <div className="mb-10 md:mb-12 inline-block">
-            <div className="flex items-center justify-center gap-2 md:gap-3">
-              <Heart className="w-10 h-10 md:w-12 md:h-12 fill-primary text-primary drop-shadow-[0_2px_8px_rgba(201,111,86,0.5)]" />
-              <span className="font-serif text-3xl md:text-4xl font-bold text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
-                Essência Curada
-              </span>
-            </div>
-          </div>
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-8 md:mb-10 leading-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
-            Restaura a tua essência.
-          </h1>
-          <p className="text-lg sm:text-xl md:text-2xl text-white mb-14 md:mb-16 font-light drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
-            Um espaço de fé, cura e reencontro com Deus.
-          </p>
-          <Button 
-            size="lg"
-            onClick={() => scrollToSection('desafio')}
-            className="bg-primary hover:bg-secondary text-white text-base md:text-lg px-8 md:px-10 py-5 md:py-6 h-auto rounded-[30px] shadow-2xl hover:shadow-[0_8px_30px_rgba(201,111,86,0.4)] transition-all duration-300 hover:scale-105 font-medium"
-          >
-            Participa no Desafio de 21 Dias
-          </Button>
-        </div>
-      </section>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Essência Curada | Restaura a tua essência com fé e propósito">
+  <meta property="og:description" content="Uma jornada de cura interior e reconexão com Deus. Participa no Desafio de 21 Dias e reencontra a tua essência.">
+  <meta property="og:image" content="https://essenciacurada.com/imagens/og-image-essencia-curada.jpg">
+  <meta property="og:url" content="https://essenciacurada.com">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_PT">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Essência Curada | Restaura a tua essência com fé e propósito">
+  <meta name="twitter:description" content="Descobre um espaço de fé, cura e identidade. O teu recomeço começa aqui.">
+  <meta name="twitter:image" content="https://essenciacurada.com/imagens/og-image-essencia-curada.jpg">
 
-      {/* Mission Section */}
-      <section className="py-16 md:py-24 px-4 bg-peace-beige">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-serif text-3xl md:text-5xl font-bold text-secondary mb-10 md:mb-12">
-            A Nossa Missão
-          </h2>
-          <div className="space-y-6 md:space-y-8 text-base md:text-lg text-muted-foreground leading-relaxed font-poppins">
-            <p>
-              A Essência Curada nasceu para guiar homens e mulheres num processo de cura interior e restauração espiritual.
-            </p>
-            <p>
-              Cada palavra, oração e desafio é uma semente de esperança plantada no coração de quem deseja reencontrar a sua verdadeira identidade em Cristo.
-            </p>
-          </div>
-        </div>
-      </section>
+  <link rel="canonical" href="https://essenciacurada.com">
+  <link rel="icon" href="/imagens/favicon-ec.png" type="image/png">
 
-      {/* Paths Section */}
-      <section id="desafio" className="py-16 md:py-24 px-4 bg-background">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="font-serif text-3xl md:text-5xl font-bold text-center text-secondary mb-4 md:mb-6">
-            Escolhe o teu próximo passo
-          </h2>
-          <p className="text-center text-lg md:text-xl text-muted-foreground mb-12 md:mb-16 max-w-2xl mx-auto font-poppins">
-            na jornada de restauração
-          </p>
-          <div className="grid md:grid-cols-3 gap-8">
-            <PathCard
-              icon={CalendarDays}
-              title="Desafio 21 Dias"
-              description="Dá o teu primeiro passo rumo à cura interior."
-              buttonText="Participar do Desafio"
-              onClick={() => alert('Desafio em breve!')}
-            />
-            <PathCard
-              icon={Users}
-              title="Comunidade Essência Curada"
-              description="Cresce em fé e conexão com pessoas que partilham o mesmo propósito."
-              buttonText="Entrar na Comunidade"
-              onClick={() => alert('Comunidade em breve!')}
-            />
-            <PathCard
-              icon={Sparkles}
-              title="Mentoria Guiada"
-              description="Acompanha uma jornada profunda de restauração e ativação da tua identidade em Cristo."
-              buttonText="Conhecer a Mentoria"
-              onClick={() => alert('Mentoria em breve!')}
-            />
-          </div>
-        </div>
-      </section>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-      {/* Therapy Section */}
-      <section className="py-16 md:py-24 px-4 bg-peace-beige">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-          <div className="order-2 md:order-1">
-            <img 
-              src={therapyImage} 
-              alt="Terapia e aconselhamento espiritual"
-              className="rounded-2xl shadow-2xl w-full h-auto"
-            />
-          </div>
-          <div className="order-1 md:order-2 space-y-5 md:space-y-6">
-            <h2 className="font-serif text-3xl md:text-5xl font-bold text-secondary">
-              Terapias e Aconselhamento Espiritual
-            </h2>
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed font-poppins">
-              Sessões de terapia comportamental cristã, individuais ou em grupo, que unem sabedoria emocional e fé.
-            </p>
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed font-poppins">
-              Um espaço seguro para restaurar o equilíbrio entre mente, coração e espírito.
-            </p>
-            <Button 
-              size="lg"
-              className="bg-secondary hover:bg-primary text-white rounded-[30px] px-8 py-5 h-auto text-base md:text-lg font-medium transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-[0_8px_30px_rgba(122,138,106,0.4)] mt-6 md:mt-8"
-              onClick={() => alert('Agendamento em breve!')}
-            >
-              Agendar Sessão
-            </Button>
-          </div>
-        </div>
-      </section>
+  <!-- Estilos básicos -->
+  <style>
+    :root{
+      --olive:#708238;        /* verde oliva */
+      --olive-dark:#556B2F;
+      --terracotta:#C96F56;
+      --bege:#F9F7F4;
+      --dourado:#BFA46F;
+      --texto:#333;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial;
+         color:var(--texto);background:#fff;line-height:1.6}
+    h1,h2,h3{font-family:"Cormorant Garamond",serif;margin:0 0 .5rem;color:var(--olive-dark)}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    .btn{display:inline-block;background:var(--terracotta);color:#fff;text-decoration:none;
+         padding:14px 22px;border-radius:28px;font-weight:600;transition:.2s}
+    .btn:hover{background:var(--olive);}
+    .section{padding:56px 0}
+    .muted{color:#555}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+    .card{background:#fff;border:1px solid #eee;border-radius:16px;padding:18px;box-shadow:0 6px 14px rgba(0,0,0,.05)}
+    /* HERO */
+    .hero{
+      position:relative;min-height:72vh;display:flex;align-items:center;
+      background-image:linear-gradient(to bottom,rgba(0,0,0,.35),rgba(0,0,0,.35)),url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1400&auto=format&fit=crop');
+      background-size:cover;background-position:center;color:#fff;text-align:left
+    }
+    .hero h1{font-size:clamp(36px,6vw,64px);color:#fff}
+    .hero p{font-size:clamp(16px,2.5vw,20px);opacity:.95;margin:10px 0 24px}
+    /* Testemunhos */
+    .quote{background:#fff;border:1px solid #eee;border-radius:16px;padding:18px;font-style:italic;
+           box-shadow:0 6px 14px rgba(0,0,0,.05)}
+    /* CTA Final */
+    .cta{background:linear-gradient(180deg, var(--bege), #fff)}
+    footer{background:#111;color:#ddd;padding:26px 0;font-size:14px}
+    footer a{color:#ddd;text-decoration:none}
+    footer a:hover{color:#fff;text-decoration:underline}
+  </style>
+</head>
+<body>
 
-      {/* Testimonials Section */}
-      <section className="py-16 md:py-24 px-4 bg-background">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="font-serif text-3xl md:text-5xl font-bold text-center text-secondary mb-12 md:mb-16">
-            Transformações Reais
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <TestimonialCard quote="Através da Essência Curada, voltei a sentir Deus." />
-            <TestimonialCard quote="Foi o recomeço que eu esperava há anos." />
-            <TestimonialCard quote="Senti-me amada, vista e curada." />
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA Section */}
-      <section className="py-16 md:py-24 px-4 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10">
-        <div className="max-w-4xl mx-auto text-center space-y-6 md:space-y-8">
-          <h2 className="font-serif text-3xl md:text-5xl font-bold text-secondary">
-            O teu recomeço começa aqui.
-          </h2>
-          <p className="text-xl md:text-2xl text-muted-foreground font-light italic font-serif">
-            "Eis que faço novas todas as coisas."
-          </p>
-          <p className="text-base md:text-lg text-muted-foreground font-poppins">
-            — Apocalipse 21:5
-          </p>
-          <Button 
-            size="lg"
-            onClick={() => scrollToSection('desafio')}
-            className="bg-accent hover:bg-primary text-white text-base md:text-lg px-8 md:px-10 py-5 md:py-6 h-auto rounded-[30px] shadow-xl hover:shadow-[0_8px_30px_rgba(178,139,68,0.4)] hover:scale-105 transition-all duration-300 font-medium mt-4"
-          >
-            Quero restaurar a minha essência
-          </Button>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-foreground text-background py-12 md:py-16 px-4">
-        <div className="max-w-6xl mx-auto text-center space-y-6 md:space-y-8">
-          <div className="flex items-center justify-center gap-2 md:gap-3">
-            <Heart className="w-7 h-7 md:w-8 md:h-8 fill-primary text-primary" />
-            <span className="font-serif text-xl md:text-2xl font-bold">
-              Essência Curada
-            </span>
-          </div>
-          <p className="text-background/80 max-w-2xl mx-auto font-poppins text-sm md:text-base">
-            Cura interior, reconexão com Deus e recomeço com propósito.
-          </p>
-          <div className="flex justify-center gap-6 md:gap-8 text-xs md:text-sm font-poppins">
-            <a href="#" className="hover:text-primary transition-colors duration-300">Instagram</a>
-            <a href="#" className="hover:text-primary transition-colors duration-300">WhatsApp</a>
-            <a href="#" className="hover:text-primary transition-colors duration-300">E-mail</a>
-          </div>
-          <p className="text-xs md:text-sm text-background/60 pt-4 md:pt-6 font-poppins">
-            © 2025 Essência Curada – Todos os direitos reservados.
-          </p>
-        </div>
-      </footer>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div style="background:rgba(255,255,255,.08);display:inline-block;padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.25);margin-bottom:12px">
+        <strong style="letter-spacing:.3px">Essência Curada</strong>
+      </div>
+      <h1>Restaura a tua essência.</h1>
+      <p>Um espaço de fé, cura e reencontro com Deus.</p>
+      <a class="btn" href="/desafio21dias">Participa no Desafio de 21 Dias</a>
     </div>
-  );
-};
+  </header>
 
-export default Index;
+  <!-- Missão -->
+  <section class="section" style="background:var(--bege)">
+    <div class="container">
+      <h2>A Nossa Missão</h2>
+      <p class="muted">A Essência Curada nasceu para guiar homens e mulheres num processo de cura interior e restauração espiritual. Cada palavra, oração e desafio é uma semente de esperança plantada no coração de quem deseja reencontrar a sua verdadeira identidade em Cristo.</p>
+    </div>
+  </section>
+
+  <!-- Caminhos da Cura -->
+  <section class="section">
+    <div class="container">
+      <h2>Escolhe o teu próximo passo</h2>
+      <p class="muted">na jornada de restauração</p>
+      <div class="cards" style="margin-top:14px">
+        <div class="card">
+          <h3>Desafio 21 Dias</h3>
+          <p>Dá o teu primeiro passo rumo à cura interior.</p>
+          <a class="btn" href="/desafio21dias">Participar do Desafio</a>
+        </div>
+        <div class="card">
+          <h3>Comunidade Essência Curada</h3>
+          <p>Cresce em fé e em conexão com pessoas que partilham o mesmo propósito.</p>
+          <a class="btn" href="/comunidade">Entrar na Comunidade</a>
+        </div>
+        <div class="card">
+          <h3>Mentoria Guiada</h3>
+          <p>Uma jornada profunda de restauração e ativação da tua identidade em Cristo.</p>
+          <a class="btn" href="/mentoria">Conhecer a Mentoria</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Terapias -->
+  <section class="section" style="background:var(--bege)">
+    <div class="container">
+      <h2>Terapias e Aconselhamento Espiritual</h2>
+      <p>Sessões de terapia comportamental cristã, individuais ou em grupo, que unem sabedoria emocional e fé. Um espaço seguro para restaurar o equilíbrio entre mente, coração e espírito.</p>
+      <a class="btn" href="/terapias">Agendar Sessão</a>
+    </div>
+  </section>
+
+  <!-- Testemunhos -->
+  <section class="section">
+    <div class="container">
+      <h2>Transformações Reais</h2>
+      <div class="cards" style="margin-top:14px">
+        <div class="quote">“Através da Essência Curada, voltei a sentir Deus.”</div>
+        <div class="quote">“Foi o recomeço que eu esperava há anos.”</div>
+        <div class="quote">“Senti-me amada, vista e curada.”</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="section cta">
+    <div class="container" style="text-align:center">
+      <h2>O teu recomeço começa aqui.</h2>
+      <p class="muted">“Eis que faço novas todas as coisas.” — Apocalipse 21:5</p>
+      <a class="btn" href="/desafio21dias">Quero restaurar a minha essência</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between;align-items:center">
+      <div>© 2025 Essência Curada — Todos os direitos reservados.</div>
+      <div style="display:flex;gap:14px">
+        <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://wa.me/" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="mailto:contato@essenciacurada.com">E-mail</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
